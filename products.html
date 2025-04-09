@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUCCI STORE IN VIETNAM</title>
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+  <header>
+    <h1>GUCCI STORE IN VIETNAM</h1>
+  </header>
+  <!-- Modal (Popup) thông báo -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Thêm vào giỏ hàng thành công!</h2>
+    <p>Sản phẩm đã được thêm vào giỏ hàng của bạn.</p>
+  </div>
+</div>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+      <ul>
+        <li><a href="home.html">Trang chủ</a></li>
+        <li><a href="products.html">Sản phẩm</a></li>
+        <li><a href="about.html">Về chúng tôi</a></li>
+        <li><a href="cart.html">Giỏ hàng</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+  <section class="category">
+    <h2>Thời trang nam</h2>
+    <div class="products">
+      <div class="product">
+        <img src="image/poloshirt1.avif" alt="GG cotton knit jacquard polo shirt">
+        <h3>GG cotton knit jacquard polo shirt</h3>
+        <p>Giá: 22.300.000 VND</p>
+        <button onclick="addToCart('GG cotton knit jacquard polo shirt', 22300000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/jacket1.avif" alt="Gucci Lasered denim jacket">
+        <h3>Gucci Lasered denim jacket</h3>
+        <p>Giá: 63.790.000 VND</p>
+        <button onclick="addToCart('Gucci Lasered denim jacket', 63790000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/aodaingan.avif" alt="Printed cotton jersey long-sleeve T-shirt">
+        <h3>Printed cotton jersey long-sleeve T-shirt</h3>
+        <p>Giá: 34.120.000 VND</p>
+        <button onclick="addToCart('Printed cotton jersey long-sleeve T-shirt', 34120000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/sweater.avif" alt="Cotton jersey sweatshirt with embroidery">
+        <h3>Cotton jersey sweatshirt with embroidery</h3>
+        <p>Giá: 27.870.000 VND</p>
+        <button onclick="addToCart('Cotton jersey sweatshirt with embroidery', 27870000)">Thêm vào giỏ</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="category">
+    <h2>Phụ kiện</h2>
+    <div class="products">
+      <div class="product">
+        <img src="image/watch.jpg" alt="Gucci Interlocking watch, 41mm">
+        <h3>Gucci Interlocking watch, 41mm</h3>
+        <p>Giá: 56.870.000 VND</p>
+        <button onclick="addToCart('Gucci Interlocking watch, 41mm', 56870000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/chain.avif" alt="Gucci Interlocking chain bracelet">
+        <h3>Gucci Interlocking chain bracelet</h3>
+        <p>Giá: 13.780.000 VND</p>
+        <button onclick="addToCart('Gucci Interlocking chain bracelet', 13780000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/ring.avif" alt="Icon ring with gemstones">
+        <h3>Icon ring with gemstones</h3>
+        <p>Giá: 27.820.000 VND</p>
+        <button onclick="addToCart('Icon ring with gemstones', 27820000)">Thêm vào giỏ</button>
+      </div>
+
+      <div class="product">
+        <img src="image/necklace.avif" alt="Gucci Interlocking 18k chain necklace">
+        <h3>Gucci Interlocking 18k chain necklace</h3>
+        <p>Giá: 101.413.000</p>
+        <button onclick="addToCart('Gucci Interlocking 18k chain necklace', 101413000)">Thêm vào giỏ</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="cart.html">Xem giỏ hàng</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

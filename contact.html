@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - GUCCI STORE IN VIETNAM</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-black text-white p-4">
+        <ul class="flex space-x-4 justify-center">
+            <li><a class="hover:underline" href="home.html">Trang chủ</a></li>
+            <li><a class="hover:underline" href="products.html">Sản phẩm</a></li>
+            <li><a class="hover:underline" href="about.html">Về chúng tôi</a></li>
+            <li><a class="hover:underline" href="cart.html">Giỏ hàng</a></li>
+            <li><a class="hover:underline" href="contact.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
+        <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">Hãy liên hệ với chúng tôi ngay khi bạn cần hỗ trợ</h1>
+        <p class="mb-6 text-center text-gray-600">Chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc. Bạn hãy điền thông tin liên hệ và vấn đề đang gặp phải vào form bên dưới. Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.</p>
+
+        <!-- Contact Form -->
+        <form action="http://localhost:3000/submit-form" method="POST" class="mb-8 max-w-lg mx-auto">
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700" for="name">Họ và Tên</label>
+                <input class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" name="name" placeholder="Nhập họ và tên" type="text" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700" for="email">Địa chỉ Email</label>
+                <input class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" name="email" placeholder="Nhập email của bạn" type="email" required />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700" for="message">Vấn đề</label>
+                <textarea class="border border-gray-300 p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" name="message" placeholder="Nhập lời nhắn của bạn" required></textarea>
+            </div>
+            <button class="bg-blue-500 text-white p-3 w-full rounded-lg hover:bg-blue-600 transition duration-300" type="submit">Gửi</button>
+        </form>
+
+        <!-- Contact Information -->
+        <div class="mb-8 text-center">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Thông tin liên hệ</h2>
+            <p class="text-gray-600">Địa chỉ: 03 Quang Trung, Hải Châu, Đà Nẵng</p>
+            <p class="text-gray-600">Điện thoại: +84 987 654 321</p>
+            <p class="text-gray-600">Email: guccistorevn05@outlook.com</p>
+        </div>
+
+        <!-- Bản đồ Google Maps -->
+        <section id="map">
+            <h3>Vị trí bản đồ</h3>
+            <!-- Nhúng bản đồ Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.8234437792185!2d108.2203004753759!3d16.07464918460563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218307d81c91d%3A0xbc7c14cab8a09c8!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBEdXkgVMOibg!5e0!3m2!1svi!2s!4v1743745416648!5m2!1svi!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+</body>
+
+</html>

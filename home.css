@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('image/guccibanner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  /* Header */
+  header {
+    background-color: rgba(44, 62, 80, 0.7); /* Màu tối với độ trong suốt */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  /* Phần Banner với hình ảnh background */
+  #hero {
+    background-image: url('image/guccistore.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .hero-content .btn {
+    padding: 12px 30px;
+    background-color: #07743d;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .hero-content .btn:hover {
+    background-color: #3498db;
+  }
+
+  /* Thanh điều hướng */
+  nav {
+    background-color: rgba(48, 59, 66, 0.9); /* Thanh điều hướng có màu xanh với độ trong suốt */
+    padding: 20px 0; /* Tăng độ cao của thanh điều hướng */
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul li {
+    margin: 0 25px; /* Tăng khoảng cách giữa các mục */
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Tăng kích thước chữ */
+    font-weight: 600;
+    padding: 15px 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #1abc9c;
+    color: #ecf0f1;
+    border-radius: 5px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+  }

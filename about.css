@@ -1,0 +1,125 @@
+.header-nav-wrapper {
+    background-image: url('image/aboutbackground.jpg');
+    background-position: center;
+    padding: 30px 0;
+    border: 2px solid #333; /* Khung bao quanh */
+    border-radius: 10px;
+  }
+
+header {
+    text-align: center;
+    padding: 100px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.5);;
+  }
+
+  header h1 {
+    font-size: 48px;
+    color: #fbf8f8;
+    margin: 0;
+  }
+
+  /* Thanh điều hướng */
+  nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #333;
+    border-radius: 5px;
+  }
+
+  /* Phần giới thiệu về cửa hàng */
+  #introduction {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #introduction h2 {
+    font-size: 36px; 
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  #introduction p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+  }
+
+  /* Các phần hình ảnh sản phẩm */
+  #tea, #coffee {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+
+  #tea h2, #coffee h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .product {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .product h3 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .product p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+  }

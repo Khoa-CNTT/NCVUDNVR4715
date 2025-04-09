@@ -1,0 +1,232 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.product p {
+    color: #777;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Thanh điều hướng */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Màu nền hơi trong suốt */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Căn giữa các mục trong thanh điều hướng */
+  }
+  
+  nav ul li {
+    margin: 0 20px; /* Khoảng cách giữa các mục */
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333; /* Màu nền khi hover */
+    border-radius: 5px;
+  }
+  
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.product button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .category h2 {
+        font-size: 24px;
+    }
+
+    .product h3 {
+        font-size: 18px;
+    }
+
+    .product button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* Kiểu cho modal */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Màu nền mờ */
+  }
+  
+  /* Kiểu cho nội dung trong modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Kiểu cho nút đóng modal */
+  .close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Kiểu cho tiêu đề và nội dung thông báo */
+  .modal-content h2 {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .modal-content p {
+    font-size: 1.1em;
+    color: #666;
+  }
+  #product-total, #shipping-price, #final-total {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+    

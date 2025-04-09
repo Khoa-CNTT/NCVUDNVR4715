@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <h1>Shopping cart của bạn</h1>
+    <a href="products.html" id="back-to-shop">Tiếp tục mua hàng</a>
+  </header>
+
+  <section id="cart-section">
+    <ul id="cart-list"></ul>
+    <p id="total"></p>
+
+    <h3>Thông tin đặt hàng</h3>
+    <form id="order-form" action="http://localhost:3000/submit-order" method="POST">
+      <input type="text" name="name" placeholder="Họ tên" required>
+      <input type="text" name="phone" placeholder="Số điện thoại" required>
+      <input type="text" name="address" placeholder="Địa chỉ nhận hàng" required>
+
+      <input type="hidden" name="total" id="total-input" value="">
+      <input type="hidden" name="order" id="order-input" value="">
+
+      <label for="payment-method">Phương thức thanh toán:</label>
+      <select name="payment-method" id="payment-method" required>
+        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+        <option value="bank-transfer">Chuyển khoản ngân hàng</option>
+        <option value="online-payment">Thanh toán VNPay</option>
+      </select>
+
+      <div id="cod-info" style="display: none;">
+        <label for="shipping-method">Phương thức vận chuyển:</label>
+        <select name="shipping-method" id="shipping-method" required>
+          <option value="standard">Vận chuyển tiêu chuẩn (100.000 VND)</option>
+          <option value="express">Vận chuyển nhanh (200.000 VND)</option>
+        </select>
+      </div>
+
+      <p id="shipping-price">Phí vận chuyển: 100.000 VND</p>
+
+      <button class="submit">Xác nhận đơn hàng</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+
+    document.getElementById('order-form').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Ngăn form reload trang
+
+      const formData = new FormData(this);
+
+      const orderData = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        address: formData.get('address'),
+        email: formData.get('email'), // Đảm bảo form có input name="email"
+        total: formData.get('total'),
+        order: formData.get('order'),
+        paymentMethod: formData.get('payment-method'),
+        shippingMethod: formData.get('shipping-method')
+      };
+
+      try {
+        const response = await fetch('http://localhost:3000/submit-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderData)
+        });
+
+        const result = await response.text();
+        alert(result); // Hiển thị thông báo từ server
+
+        if (response.ok) {
+          localStorage.removeItem('cart'); // Xóa giỏ hàng sau khi đặt hàng thành công
+          window.location.href = 'thankyou.html'; // Điều hướng trang cảm ơn (nếu có)
+        }
+      } catch (error) {
+        console.error('Lỗi:', error);
+        alert('Có lỗi xảy ra, vui lòng thử lại!');
+      }
+    });
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      const cartList = document.getElementById('cart-list');
+      const totalElement = document.getElementById('total');
+      const totalInput = document.getElementById('total-input');
+      const orderInput = document.getElementById('order-input');
+
+      cartList.innerHTML = '';
+
+      let total = 0;
+      let orderDetails = '';
+
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.quantity} x ${item.price.toLocaleString()}đ`;
+        cartList.appendChild(li);
+
+        total += item.price * item.quantity;
+        orderDetails += `${item.name} (x${item.quantity}) - ${item.price.toLocaleString()}đ\n`;
+      });
+
+      totalElement.textContent = `Tổng: ${total.toLocaleString()}đ`;
+      totalInput.value = total;
+      orderInput.value = orderDetails;
+    }
+
+    renderCart();
+
+    document.getElementById('payment-method').addEventListener('change', function(e) {
+      const codInfo = document.getElementById('cod-info');
+      codInfo.style.display = e.target.value === 'cod' ? 'block' : 'none';
+    });
+
+    document.getElementById('shipping-method').addEventListener('change', function(e) {
+      const shippingPriceElement = document.getElementById('shipping-price');
+      const shippingMethod = e.target.value;
+      let shippingCost = 30000;
+
+      if (shippingMethod === 'express') {
+        shippingCost = 50000;
+      }
+
+      shippingPriceElement.textContent = `Phí vận chuyển: ${shippingCost.toLocaleString()}đ`;
+
+      const totalInput = document.getElementById('total-input');
+      const originalTotal = calculateTotal();
+      const newTotal = originalTotal + shippingCost;
+      document.getElementById('total').textContent = `Tổng: ${newTotal.toLocaleString()}đ`;
+      totalInput.value = newTotal;
+    });
+
+    function calculateTotal() {
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+      });
+      return total;
+    }
+  </script>
+</body>
+</html>
