@@ -146,3 +146,62 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'home.html'));
 });
+const sql = require('mssql');
+
+// Cấu hình SQL Server
+const config = {
+  user: 'sa',            // hoặc user khác
+  password: 'your_password',
+  server: 'localhost',   // hoặc IP SQL Server
+  database: 'your_database_name',
+  options: {
+    encrypt: false,
+    trustServerCertificate: true,
+  },
+};
+const express = require('express');
+// const app = express();
+const sql = require('mssql');
+
+app.use(express.json());
+
+// Kết nối
+sql.connect(config).then(pool => {
+  console.log("Kết nối SQL thành công");
+
+  // Đăng ký
+  app.post("/api/register", async (req, res) => {
+    const { username, password } = req.body;
+    try {
+      await pool.request()
+        .input('username', sql.VarChar, username)
+        .input('password', sql.VarChar, password)
+        .query("INSERT INTO Users (username, password) VALUES (@username, @password)");
+      res.json({ message: "Đăng ký thành công!" });
+    } catch (err) {
+      res.status(500).json({ message: "Lỗi đăng ký", error: err.message });
+    }
+  });
+
+  // Đăng nhập
+  app.post("/api/login", async (req, res) => {
+    const { username, password } = req.body;
+    try {
+      const result = await pool.request()
+        .input('username', sql.VarChar, username)
+        .input('password', sql.VarChar, password)
+        .query("SELECT * FROM Users WHERE username = @username AND password = @password");
+
+      if (result.recordset.length > 0) {
+        res.json({ message: "Đăng nhập thành công!" });
+      } else {
+        res.status(401).json({ message: "Sai tài khoản hoặc mật khẩu!" });
+      }
+    } catch (err) {
+      res.status(500).json({ message: "Lỗi đăng nhập", error: err.message });
+    }
+  });
+
+}).catch(err => console.error("Lỗi kết nối SQL:", err));
+
+app.listen(3000, () => console.log("Server chạy tại http://localhost:3000"));
