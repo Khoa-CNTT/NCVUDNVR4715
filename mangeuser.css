@@ -1,0 +1,13 @@
+body {
+    background-color: #f2f5f7;
+}
+
+h1 {
+    color: #333;
+}
+
+.table img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}

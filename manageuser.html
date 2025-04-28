@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Người Dùng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <h1 class="text-center mb-4">Quản Lý Người Dùng</h1>
+
+    <div class="text-end mb-3">
+        <button class="btn btn-primary">+ Thêm Người Dùng</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Ảnh</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Quyền</th>
+                    <th scope="col" class="text-center">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://via.placeholder.com/60" class="rounded-circle" alt="User A"></td>
+                    <td>Nguyễn Văn A</td>
+                    <td>a.nguyen@example.com</td>
+                    <td><span class="badge bg-success">Nhân viên</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-warning btn-sm me-2">Sửa</button>
+                        <button class="btn btn-danger btn-sm">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/60" class="rounded-circle" alt="User B"></td>
+                    <td>Trần Thị B</td>
+                    <td>b.tran@example.com</td>
+                    <td><span class="badge bg-secondary">Khách hàng</span></td>
+                    <td class="text-center">
+                        <button class="btn btn-warning btn-sm me-2">Sửa</button>
+                        <button class="btn btn-danger btn-sm">Xóa</button>
+                    </td>
+                </tr>
+                <!-- Thêm dòng mới tại đây -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
